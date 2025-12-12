@@ -1,0 +1,156 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  font-family: "Playfair Display", serif;
+}
+
+.clock-container {
+  width: min(80vmin, 400px);
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.clock {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #fafafa, #f0f0f0);
+  box-shadow: 0 0 0 4px #1a1a1a, 0 0 0 8px #04ff04, 0 0 0 12px #1a1a1a,
+    0 20px 40px rgba(0, 0, 0, 0.15), inset 0 4px 8px rgba(19, 18, 18, 0.8),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.clock-face {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.numeral {
+  position: absolute;
+  font-size: clamp(0.9rem, 4vmin, 1.5rem);
+  font-weight: 500;
+  color: #0a0a0a;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Posições dos números */
+.numeral-12 { top: 12%; left: 50%; }
+.numeral-1  { top: 16%; left: 73%; }
+.numeral-2  { top: 27%; left: 84%; }
+.numeral-3  { top: 50%; left: 88%; }
+.numeral-4  { top: 73%; left: 84%; }
+.numeral-5  { top: 84%; left: 73%; }
+.numeral-6  { top: 88%; left: 50%; }
+.numeral-7  { top: 84%; left: 27%; }
+.numeral-8  { top: 73%; left: 16%; }
+.numeral-9  { top: 50%; left: 12%; }
+.numeral-10 { top: 27%; left: 16%; }
+.numeral-11 { top: 16%; left: 27%; }
+
+.center-dot {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  background: radial-gradient(circle, #d4af37, #8b6914);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Ponteiros */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 4px;
+}
+
+.hour-hand {
+  width: 3.5%;
+  height: 25%;
+  background: linear-gradient(to top, #1a1a1a, #333);
+  margin-left: -1.75%;
+  transform: rotate(310deg);
+  z-index: 3;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.minute-hand {
+  width: 2.5%;
+  height: 35%;
+  background: linear-gradient(to top, #1a1a1a, #444);
+  margin-left: -1.25%;
+  transform: rotate(60deg);
+  z-index: 2;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.second-hand {
+  width: 1%;
+  height: 40%;
+  background: linear-gradient(to top, #c41e3a, #ff4757);
+  margin-left: -0.5%;
+  transform: rotate(180deg);
+  z-index: 4;
+}
+
+.second-hand::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 15%;
+  background: #c41e3a;
+  bottom: -12%;
+  left: -100%;
+  border-radius: 2px;
+}
+
+/* Textos */
+.Haiku {
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(0.9rem, 5vmin, 0.95rem);
+  color: #130303;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.brand {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(0.5rem, 2vmin, 0.75rem);
+  color: #929090;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.cidade {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(0.5rem, 2vmin, 0.75rem);
+  color: #929090;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
